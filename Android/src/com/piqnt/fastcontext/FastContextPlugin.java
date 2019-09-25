@@ -45,7 +45,8 @@ public class FastContextPlugin extends CordovaPlugin {
                 if (FastContextPlugin.TOP) {
                     // glsurface over webview
               //      webView.addView(fastView);
-                    webViewLayout.addView(fastView);
+               //     webViewLayout.addView(fastView);
+                    ((WebView) webView.getView()).addView(fastView);
                     return;
                 }
 
