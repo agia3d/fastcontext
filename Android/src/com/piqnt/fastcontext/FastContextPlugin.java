@@ -56,28 +56,28 @@ public class FastContextPlugin extends CordovaPlugin {
                 // add themselve to the parent, admob-plugin-pro for example
 
            //     ViewGroup webParent = (ViewGroup) webView.getParent();
-                ViewGroup webParent = (ViewGroup) ((WebView) webView.getView()).getParent();
+                ViewGroup webParent = (ViewGroup) webView.getView().getParent();
 
                 FrameLayout newLayout = new FrameLayout(activity);
                 newLayout.setLayoutParams(new FrameLayout.LayoutParams(
                         FrameLayout.LayoutParams.MATCH_PARENT,
                         FrameLayout.LayoutParams.MATCH_PARENT));
 
-                webParent.removeView(webView);
+            //    webParent.removeView(webView);// ligne non reconduite
                 webParent.addView(newLayout);
 
                 newLayout.addView(fastView);
                 newLayout.addView((WebView) webView.getView());
 
-                webView.setBackgroundColor(Color.TRANSPARENT);
-                webView.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
+                webView.getView().setBackgroundColor(Color.TRANSPARENT);
+                webView.getView().setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
             //    webView.setWebViewClient(new CordovaWebViewClient(cordova,
-                webView.setWebViewClient(new SystemWebViewClient(cordova,
+                webView.setWebViewClient(new WebViewClient(cordova,
                         webView) {
                     @Override
                     public void onPageFinished(WebView view, String url) {
-                        webView.setBackgroundColor(Color.TRANSPARENT);
-                        webView.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
+                        webView.getView().setBackgroundColor(Color.TRANSPARENT);
+                        webView.getView().setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
                     }
                 });
             }
