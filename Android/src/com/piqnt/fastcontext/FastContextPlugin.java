@@ -73,8 +73,7 @@ public class FastContextPlugin extends CordovaPlugin {
                 webView.getView().setBackgroundColor(Color.TRANSPARENT);
                 webView.getView().setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
             //    webView.setWebViewClient(new CordovaWebViewClient(cordova,
-                webView.setWebViewClient(new android.webkit.WebViewClient(cordova,
-                        webView) {
+                webView.setWebViewClient(new WebViewClient() {
                     @Override
                     public void onPageFinished(WebView view, String url) {
                         webView.getView().setBackgroundColor(Color.TRANSPARENT);
