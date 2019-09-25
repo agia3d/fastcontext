@@ -54,7 +54,8 @@ public class FastContextPlugin extends CordovaPlugin {
                 // 2. some plugins assume webview parent to be linearlayout and
                 // add themselve to the parent, admob-plugin-pro for example
 
-                ViewGroup webParent = (ViewGroup) webView.getParent();
+           //     ViewGroup webParent = (ViewGroup) webView.getParent();
+                ViewGroup webParent = (ViewGroup) webView.getView().getParent();
 
                 FrameLayout newLayout = new FrameLayout(activity);
                 newLayout.setLayoutParams(new FrameLayout.LayoutParams(
