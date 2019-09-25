@@ -62,7 +62,8 @@ public class FastContextPlugin extends CordovaPlugin {
                         FrameLayout.LayoutParams.MATCH_PARENT,
                         FrameLayout.LayoutParams.MATCH_PARENT));
 
-                webParent.removeView(webView);
+           //     webParent.removeView(webView);
+                webParent.getView().removeView(webView);
                 webParent.addView(newLayout);
 
                 newLayout.addView(fastView);
