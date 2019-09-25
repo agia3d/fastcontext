@@ -56,7 +56,7 @@ public class FastContextPlugin extends CordovaPlugin {
                 // add themselve to the parent, admob-plugin-pro for example
 
            //     ViewGroup webParent = (ViewGroup) webView.getParent();
-                ViewGroup webParent = (ViewGroup) webView.getView().getParent();
+                ViewGroup webParent = (ViewGroup) ((WebView) webView.getView()).getParent();
 
                 FrameLayout newLayout = new FrameLayout(activity);
                 newLayout.setLayoutParams(new FrameLayout.LayoutParams(
