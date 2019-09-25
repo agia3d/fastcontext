@@ -14,6 +14,7 @@ import android.graphics.Color;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
 public class FastContextPlugin extends CordovaPlugin {
