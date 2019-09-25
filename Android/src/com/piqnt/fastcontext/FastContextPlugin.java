@@ -67,7 +67,7 @@ public class FastContextPlugin extends CordovaPlugin {
                 webParent.addView(newLayout);
 
                 newLayout.addView(fastView);
-                newLayout.addView(webView);
+                newLayout.addView((WebView) webView.getView());
 
                 webView.setBackgroundColor(Color.TRANSPARENT);
                 webView.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
